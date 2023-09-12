@@ -92,6 +92,11 @@
                 min-height: 100vh;
             }
 
+            span[title] {
+                border-bottom: 1px dotted #c7d5e0;
+                cursor: help;
+            }
+
             .badges {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -153,10 +158,13 @@
                 badgeImage.alt = `${i + 1} Year Badge`;
                 
                 const badgeText = document.createElement("span");
-                badgeText.innerHTML = `${i + 1} Year Badge<br/>September 10, ${steamReleaseDate.getFullYear() + i + 1}`;
+                badgeText.innerHTML = `${i + 1} Year Badge`;
+                const badgeYear = document.createElement("span");
+                badgeYear.innerHTML = `September 10, ${steamReleaseDate.getFullYear() + i + 1}`;
                 
                 badge.appendChild(badgeImage);
                 badge.appendChild(badgeText);
+                badge.appendChild(badgeYear);
                 badges.appendChild(badge);                
                 if(i+1 == 20) {
                     const badge = document.createElement("div");
@@ -167,10 +175,14 @@
                     badgeImage.alt = `20 Year Anniversary Badge`;
 
                     const badgeText = document.createElement("span");
-                    badgeText.innerHTML = `20 Year Anniversary Badge<br/>September 10, ${steamReleaseDate.getFullYear() + i + 1}`;
+                    badgeText.innerHTML = `20 Year Anniversary Badge`;
+                    const badgeYear = document.createElement("span");
+                    badgeYear.innerHTML = `September 10, ${steamReleaseDate.getFullYear() + i + 1}`;
+                    badgeYear.title = `Special Steam Green edition awarded to accounts created during Steam's first year.`;
 
                     badge.appendChild(badgeImage);
                     badge.appendChild(badgeText);
+                    badge.appendChild(badgeYear);
                     badges.appendChild(badge);
                 }
             }
